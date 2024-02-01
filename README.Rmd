@@ -32,5 +32,7 @@ This is a basic example which shows you how to apply Gaussian variational estima
 
 ```{r example}
 library(regdif)
-result <- with(regDIF_simdata, regDIF_GVEMM(Y, D, X))
+result <- with(regDIF_simdata, regDIF_GVEMM(Y, D, X, 'IWGVEMM', Lambda0 = c(0.3, 0.5)))
+round(result[[1]]$beta, 3)
+round(result[[2]]$beta, 3)
 ```
